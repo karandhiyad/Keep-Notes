@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item android:id="@+id/bNavNotes"
+        android:title="Notes"
+        android:icon="@drawable/ic_baseline_description_24"
+        android:menuCategory="secondary"
+        />
+
+    <item
+        android:id="@+id/bNavToDo"
+        android:title="To Do"
+        android:icon="@drawable/ic_baseline_today_24"
+        android:menuCategory="secondary"
+        />
+
+    <item
+        android:id="@+id/bNavBlogs"
+        android:title="Blogs"
+        android:icon="@drawable/ic_baseline_speaker_notes_24"
+        android:menuCategory="secondary"
+        />
+
+
+</menu>
