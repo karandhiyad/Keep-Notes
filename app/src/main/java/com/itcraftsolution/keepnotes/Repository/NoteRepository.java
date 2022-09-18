@@ -22,7 +22,7 @@ public class NoteRepository{
     }
 
     public void addNote(TBLNotes tblNotes){
-
+        databaseHelper.databaseInterface().addTBLNotes(tblNotes);
     }
 
     public void updateNote(TBLNotes tblNotes){

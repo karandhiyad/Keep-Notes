@@ -2,6 +2,7 @@ package com.itcraftsolution.keepnotes.Database;
 
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
+import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
 
 @Entity(tableName = "TBLNotes")
@@ -14,8 +15,8 @@ public class TBLNotes {
     @ColumnInfo(name = "title")
     private String title;
 
-    @ColumnInfo(name = "notes")
-    private String notes;
+    @ColumnInfo(name = "text")
+    private String text;
 
     @ColumnInfo(name = "folder")
     private String folder;
@@ -24,13 +25,19 @@ public class TBLNotes {
     private boolean pin;
 
     @ColumnInfo(name = "time",defaultValue = "CURRENT_TIMESTAMP")
-    private String time;
+    private long time;
 
-    public TBLNotes(String title, String notes, String folder, boolean pin, String time) {
+    public TBLNotes(String title, String text, String folder, boolean pin, long time) {
         this.title = title;
-        this.notes = notes;
+        this.text = text;
         this.folder = folder;
         this.pin = pin;
+        this.time = time;
+    }
+    @Ignore
+    public TBLNotes(String title, String text, long time) {
+        this.title = title;
+        this.text = text;
         this.time = time;
     }
 
@@ -50,12 +57,12 @@ public class TBLNotes {
         this.title = title;
     }
 
-    public String getNotes() {
-        return notes;
+    public String getText() {
+        return text;
     }
 
-    public void setNotes(String notes) {
-        this.notes = notes;
+    public void setText(String text) {
+        this.text = text;
     }
 
     public String getFolder() {
@@ -74,11 +81,11 @@ public class TBLNotes {
         this.pin = pin;
     }
 
-    public String getTime() {
+    public long getTime() {
         return time;
     }
 
-    public void setTime(String time) {
+    public void setTime(long time) {
         this.time = time;
     }
 }

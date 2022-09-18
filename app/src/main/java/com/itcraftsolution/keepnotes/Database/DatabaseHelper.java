@@ -7,8 +7,7 @@ import androidx.room.Room;
 import androidx.room.RoomDatabase;
 import androidx.room.TypeConverters;
 
-@Database(entities = {TBLNotes.class,TBLUserDetail.class,TBLAreaObjects.class,TBLBoards.class,TBLEquipments.class,TBLFoodOrderItem.class,TBLImages.class,TBLIrBlasters.class,TBLIrAppliancesModels.class,TBLIrAppliancesTypes.class,TBLIrAppliancesBrands.class,
-        TBLIrEquipments.class,TBLFBAcCommand.class,TBLFBDvdCommand.class, TBLFBTelevisionCommand.class,TBLFBFanRemoteCommand.class,TBLFBSetTopBoxCommand.class,TBLFBStbChannel.class},exportSchema = false,version = 1)
+@Database(entities = {TBLNotes.class,TBLImages.class},exportSchema = false,version = 1)
 @TypeConverters({ImageToBitmap.class})
 public abstract class DatabaseHelper extends RoomDatabase {
     private static final String DB_NAME ="NoteDatabase";

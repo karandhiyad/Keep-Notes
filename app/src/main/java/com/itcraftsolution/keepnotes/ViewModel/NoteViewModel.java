@@ -26,7 +26,7 @@ public class NoteViewModel extends AndroidViewModel {
     }
 
     public void addNote(TBLNotes tblNotes){
-
+        noteRepository.addNote(tblNotes);
     }
 
     public void updateNote(TBLNotes tblNotes){

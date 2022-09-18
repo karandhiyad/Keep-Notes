@@ -17,6 +17,7 @@ import com.itcraftsolution.keepnotes.databinding.ActivityMainBinding;
 public class MainActivity extends AppCompatActivity {
 
     private ActivityMainBinding binding;
+    private int FinishCount = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,7 +65,15 @@ public class MainActivity extends AppCompatActivity {
 
     public void onBackPressed() {
         if (binding.mainBottomNav.getSelectedItemId() == R.id.bNavNotes) {
-            finish();
+            FinishCount++;
+            if (FinishCount == 2){
+                finish();
+            }else {
+                FragmentTransaction firstFragment = getSupportFragmentManager().beginTransaction();
+                firstFragment.replace(R.id.frMainContainer, new NotesFragment());
+                firstFragment.commit();
+                binding.mainBottomNav.setSelectedItemId(R.id.bNavNotes);
+            }
         } else {
             FragmentTransaction firstFragment = getSupportFragmentManager().beginTransaction();
             firstFragment.replace(R.id.frMainContainer, new NotesFragment());
